@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+
+<h1>Cân Nặng</h1>
+<input id="kilo" type="text"><br>
+
+<h1>Chiều Cao</h1>
+<input type="text" id="cc">
+<button id="check" onclick="chiso()">Check</button>
+
+<h1 id="chieucao"></h1>
+<h2 id="ketqua"></h2>
+
+<script>
+    function chiso() {
+        let a = +document.getElementById("kilo").value;
+        let b = +document.getElementById("cc").value;
+        let c = a / (b * b)
+        if (c < 18.5) {
+            document.getElementById("ketqua").innerText = "Nghiện";
+        } else {
+            if (c < 25) {
+                document.getElementById("ketqua").innerText = "Bình Thường";
+            } else {
+                if (c < 30) {
+                    document.getElementById("ketqua").innerText = "Mập";
+                } else {
+                    document.getElementById("ketqua").innerText = "Quá Mập";
+                }
+            }
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>
